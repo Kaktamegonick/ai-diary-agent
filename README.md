@@ -1,75 +1,69 @@
-# AI Diary Agent
+AI Diary Agent
 
-I built this agent because I wanted to keep a personal diary without manually organizing everything in Obsidian.
+A personal diary assistant built on top of Hermes Agent.
 
-I just send a message to the agent in Telegram. It can create and edit notes in my Obsidian vault and connect related events with links.
+I wanted a simple way to keep a diary without manually creating and organizing notes in Obsidian every day.
 
-The agent runs on my VPS, so I can use it from Telegram at any time.
+I deployed Hermes Agent on my VPS, connected it to DeepSeek and Telegram, and configured it to work with my Obsidian vault.
 
-## Demo
+Now I can just send a message in Telegram and the agent can turn it into a diary entry, edit existing notes and create links between related events.
 
-
+Demo
 
 https://github.com/user-attachments/assets/c8d0a316-e64e-4821-8cb9-258bc43a6a19
 
+How it works
 
-
-
-
-## How it works
-
-```text
 Me
  ↓
 Telegram
  ↓
-AI Agent on VPS
+Hermes Agent (VPS)
  ↓
 DeepSeek API
  ↓
-Tools
- ├── Create notes
- ├── Edit notes
- └── Link related notes
+File tools
  ↓
+Obsidian Vault
+What it does
+Receives my messages through Telegram
+Creates diary entries in Obsidian
+Edits existing Markdown notes
+Connects related events with Obsidian links
+Runs continuously on my VPS
+
+For example, I can tell the agent about something that happened during the day.
+
+Instead of manually opening Obsidian, creating a file and organizing it, I just send a Telegram message. The agent handles the note for me.
+
+If a new event is related to something from an older note, it can add a link between them.
+
+What I did
+
+This project is not an AI agent built from scratch.
+
+I used Hermes Agent as the agent framework and configured it for my own use case.
+
+I:
+
+deployed Hermes Agent on a VPS
+connected DeepSeek as the LLM
+set up Telegram as the interface
+connected the agent to my Obsidian vault
+configured how diary entries are created and edited
+set up linking between related notes
+
+The goal of this project was to get hands-on experience with AI agents and understand how LLMs, tools and external applications can work together.
+
+Stack
+Hermes Agent
+DeepSeek API
+Telegram
 Obsidian
-```
+Markdown
+Linux VPS
+What's next
 
-## What it can do
+I'm currently learning how agent systems work internally.
 
-* Receive messages through Telegram
-* Create diary entries in Obsidian
-* Edit existing Markdown files
-* Find connections between related events
-* Add links between related notes
-* Run continuously on a VPS
-
-## Why I built it
-
-I use Obsidian for my notes, but I didn't want to manually write and organize every diary entry.
-
-So I built an agent that does this for me.
-
-For example, I can send something like:
-
-> Today I started learning about AI agents and tool calling.
-
-The agent can turn it into a diary entry and connect it with related notes that already exist in my Obsidian vault.
-
-Over time this creates a connected history instead of just a folder with separate diary files.
-
-## Stack
-
-* Python
-* Telegram Bot
-* DeepSeek API
-* Obsidian / Markdown
-* VPS
-
-## Current status
-
-The agent is running on my VPS and I use it through Telegram.
-
-I'm still experimenting with the project and adding new functionality as I learn more about AI agents.
-
-The source code is currently private. This repository is a small showcase of how the project works.
+My next step is to build a smaller agent from scratch in Python to better understand tool calling, agent loops and memory.
